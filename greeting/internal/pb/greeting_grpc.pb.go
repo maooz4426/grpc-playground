@@ -4,7 +4,7 @@
 // - protoc             v6.33.4
 // source: proto/greeting.proto
 
-package go_protocol_buffer
+package pb
 
 import (
 	context "context"

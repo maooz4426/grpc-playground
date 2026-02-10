@@ -4,7 +4,7 @@
 // 	protoc        v6.33.4
 // source: proto/greeting.proto
 
-package go_protocol_buffer
+package pb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -119,7 +119,7 @@ const file_proto_greeting_proto_rawDesc = "" +
 	"\rHelloResponce\x12\x18\n" +
 	"\amessage\x18\x01 \x01(\tR\amessage2N\n" +
 	"\x0fGreetingService\x12;\n" +
-	"\bSayHello\x12\x16.greeting.HelloRequest\x1a\x17.greeting.HelloResponceB\x16Z\x14./go_protocol_bufferb\x06proto3"
+	"\bSayHello\x12\x16.greeting.HelloRequest\x1a\x17.greeting.HelloResponceB>Z<github.com/maooz4426/grpc-playground/greeting/internal/pb;pbb\x06proto3"
 
 var (
 	file_proto_greeting_proto_rawDescOnce sync.Once
