@@ -13,7 +13,7 @@ defaults:
   run:
     working-directory: greeting
 jobs:
-  gen-pb:
+  test:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,16 +26,3 @@ jobs:
           go-version-file: "greeting/go.mod"
       - name: go mod tidy
         run: go mod tidy
-      - name: Install protoc
-        uses: arduino/setup-protoc@c65c819552d16ad3c9b72d9dfd5ba5237b9c906b #v3.0.0
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install protoc plugins
-        run: |
-          go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-          go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-      - name: Generate Protobuffers
-        run: make gen/pb
-      - uses: dev-hato/actions-diff-pr-management@b446497d139ed3eadc62ec1dd90dd27960ad1a0c #v2.2.4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
