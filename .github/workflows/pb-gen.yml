@@ -34,3 +34,6 @@ jobs:
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
       - name: Generate Protobuffers
         run: make gen/pb
+      - uses: dev-hato/actions-diff-pr-management@b446497d139ed3eadc62ec1dd90dd27960ad1a0c #v2.2.4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
