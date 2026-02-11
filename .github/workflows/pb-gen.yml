@@ -30,6 +30,7 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
       - uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 #v5.0.3
         with:
+          id: cache
           path: ~/go/bin
           key: ${{env.GO_CACHE_VER}}-${{ runner.os }}-${{ hashFiles('greeting/go.sum') }}
           restore-keys: |
@@ -45,6 +46,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install protoc plugins
+        if: ${{ steps.cache.outputs.cache-hit == false }}
         run: |
           go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
