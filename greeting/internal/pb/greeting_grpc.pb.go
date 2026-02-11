@@ -4,10 +4,11 @@
 // - protoc             v6.33.4
 // source: proto/greeting.proto
 
-package go_protocol_buffer
+package pb
 
 import (
 	context "context"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -116,6 +117,5 @@ var GreetingService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _GreetingService_SayHello_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/greeting.proto",
+	Streams: []grpc.StreamDesc{},
 }
