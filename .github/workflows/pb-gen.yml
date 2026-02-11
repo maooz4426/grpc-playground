@@ -6,13 +6,6 @@ on:
       branch:
         type: string
         default: main
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-    branches:
-      - main
 env:
   GO_CACHE_VER: v1
 defaults:
